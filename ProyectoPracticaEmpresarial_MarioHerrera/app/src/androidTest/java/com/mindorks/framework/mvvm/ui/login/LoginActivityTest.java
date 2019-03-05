@@ -54,10 +54,6 @@ public class LoginActivityTest {
         onView(withText(R.string.login))
                 .check(matches(isDisplayed()));
 
-        onView(withId(R.id.ibGoogleLogin))
-                .check(matches(isDisplayed()));
 
-        onView(withId(R.id.ibFbLogin))
-                .check(matches(isDisplayed()));
     }
 }

@@ -72,12 +72,7 @@
 
                     </android.support.design.widget.AppBarLayout>
 
-                    <com.mindorks.placeholderview.SwipePlaceHolderView
-                        android:id="@+id/cardsContainer"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        app:action="@{viewModel.action}"
-                        app:adapter="@{viewModel.questionDataList}" />
+
 
                 </LinearLayout>
             </android.support.design.widget.CoordinatorLayout>

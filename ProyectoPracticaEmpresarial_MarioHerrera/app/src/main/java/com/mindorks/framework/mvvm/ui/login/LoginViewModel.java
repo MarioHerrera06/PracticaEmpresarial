@@ -56,8 +56,8 @@ public class LoginViewModel extends BaseViewModel<LoginNavigator> {
                                 response.getAccessToken(),
                                 response.getUserId(),
                                 DataManager.LoggedInMode.LOGGED_IN_MODE_SERVER,
-                                response.getUserName(),
-                                response.getUserEmail(),
+                               "Mario Herrera",
+                                "marioa.herrerac@co.pwc.com",
                                 response.getGoogleProfilePicUrl()))
                 .subscribeOn(getSchedulerProvider().io())
                 .observeOn(getSchedulerProvider().ui())

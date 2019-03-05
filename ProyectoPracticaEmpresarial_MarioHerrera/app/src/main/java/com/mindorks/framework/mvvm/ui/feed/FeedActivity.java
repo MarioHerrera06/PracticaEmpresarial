@@ -70,7 +70,7 @@ public class FeedActivity extends BaseActivity<ActivityFeedBinding, FeedViewMode
         return mFeedViewModel;
     }
 
-    @Override
+   /* @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             // Respond to the action bar's Up/Home button
@@ -95,6 +95,8 @@ public class FeedActivity extends BaseActivity<ActivityFeedBinding, FeedViewMode
         return super.onOptionsItemSelected(item);
     }
 
+    */
+
     @Override
     public AndroidInjector<Fragment> supportFragmentInjector() {
         return fragmentDispatchingAndroidInjector;
@@ -104,7 +106,7 @@ public class FeedActivity extends BaseActivity<ActivityFeedBinding, FeedViewMode
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         mActivityFeedBinding = getViewDataBinding();
-        setUp();
+        //setUp();
     }
 
     private void setUp() {

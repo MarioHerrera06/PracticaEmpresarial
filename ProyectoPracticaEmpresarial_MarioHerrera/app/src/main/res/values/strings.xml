@@ -15,7 +15,7 @@
   -->
 
 <resources>
-    <string name="app_name">MvvmApp</string>
+    <string name="app_name">PricewaterhouseCoopers</string>
 
     <!--Toolbar menus-->
     <string name="clear">Clear</string>
@@ -31,7 +31,7 @@
 
     <!--Drawer Menus-->
     <string name="about">About</string>
-    <string name="logout">Logout</string>
+    <string name="logout">Cerrar sesion</string>
     <string name="feed">My Feed</string>
 
     <!--App Message-->
@@ -41,10 +41,10 @@
     <string name="connection_error">Internet connection lost!</string>
 
     <!--Login-->
-    <string name="login_dummy">Login Dummy</string>
-    <string name="login">Login</string>
-    <string name="email">Email</string>
-    <string name="password">Password</string>
+    <string name="login_dummy">PricewaterhouseCoopers</string>
+    <string name="login">Iniciar sesion</string>
+    <string name="email">Correo</string>
+    <string name="password">Contraseña</string>
 
     <!--Login Validation-->
     <string name="invalid_email_password">Please provide a valid email and password.</string>

@@ -131,14 +131,7 @@ public class MainActivity extends BaseActivity<ActivityMainBinding, MainViewMode
             ((Animatable) drawable).start();
         }
         switch (item.getItemId()) {
-            case R.id.action_cut:
-                return true;
-            case R.id.action_copy:
-                return true;
-            case R.id.action_share:
-                return true;
-            case R.id.action_delete:
-                return true;
+
             default:
                 return super.onOptionsItemSelected(item);
         }
@@ -181,7 +174,7 @@ public class MainActivity extends BaseActivity<ActivityMainBinding, MainViewMode
         mDrawer = mActivityMainBinding.drawerView;
         mToolbar = mActivityMainBinding.toolbar;
         mNavigationView = mActivityMainBinding.navigationView;
-        mCardsContainerView = mActivityMainBinding.cardsContainer;
+        //mCardsContainerView = mActivityMainBinding.cardsContainer;
 
         setSupportActionBar(mToolbar);
         ActionBarDrawerToggle mDrawerToggle = new ActionBarDrawerToggle(
@@ -207,37 +200,10 @@ public class MainActivity extends BaseActivity<ActivityMainBinding, MainViewMode
         String version = getString(R.string.version) + " " + BuildConfig.VERSION_NAME;
         mMainViewModel.updateAppVersion(version);
         mMainViewModel.onNavMenuCreated();
-        setupCardContainerView();
+
         subscribeToLiveData();
     }
 
-    private void setupCardContainerView() {
-        int screenWidth = ScreenUtils.getScreenWidth(this);
-        int screenHeight = ScreenUtils.getScreenHeight(this);
-
-        mCardsContainerView.getBuilder()
-                .setDisplayViewCount(3)
-                .setHeightSwipeDistFactor(10)
-                .setWidthSwipeDistFactor(5)
-                .setSwipeDecor(new SwipeDecor()
-                        .setViewWidth((int) (0.90 * screenWidth))
-                        .setViewHeight((int) (0.75 * screenHeight))
-                        .setPaddingTop(20)
-                        .setSwipeRotationAngle(10)
-                        .setRelativeScale(0.01f));
-
-        mCardsContainerView.addItemRemoveListener(count -> {
-            if (count == 0) {
-                // reload the contents again after 1 sec delay
-                new Handler(getMainLooper()).postDelayed(() -> {
-                    //Reload once all the cards are removed
-                    mMainViewModel.loadQuestionCards();
-                }, 800);
-            } else {
-                mMainViewModel.removeQuestionCard();
-            }
-        });
-    }
 
     private void setupNavMenu() {
         NavHeaderMainBinding navHeaderMainBinding = DataBindingUtil.inflate(getLayoutInflater(),
@@ -249,15 +215,7 @@ public class MainActivity extends BaseActivity<ActivityMainBinding, MainViewMode
                 item -> {
                     mDrawer.closeDrawer(GravityCompat.START);
                     switch (item.getItemId()) {
-                        case R.id.navItemAbout:
-                            showAboutFragment();
-                            return true;
-                        case R.id.navItemRateUs:
-                            RateUsDialog.newInstance().show(getSupportFragmentManager());
-                            return true;
-                        case R.id.navItemFeed:
-                            startActivity(FeedActivity.newIntent(MainActivity.this));
-                            return true;
+
                         case R.id.navItemLogout:
                             mMainViewModel.logout();
                             return true;
